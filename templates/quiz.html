@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="title">🎯 Quiz</h2>
+
+{% if not ready %}
+<p class="empty">Upload content first.</p>
+{% else %}
+<div class="quiz-container">
+{% set qnum = 0 %}
+{% for line in data.split('\n') %}
+    {% if line.startswith('Q') %}
+        {% set qnum = qnum + 1 %}
+        <div class="quiz-card">
+            <h3>{{ line }}</h3>
+            <div class="options">
+    {% elif line.startswith('A)') or line.startswith('B)') or line.startswith('C)') or line.startswith('D)') %}
+                <p>{{ line }}</p>
+    {% elif line.startswith('Answer') %}
+               <button onclick="toggleAnswer(this)">Show Answer</button>
+<div class="answer">{{ line }}</div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

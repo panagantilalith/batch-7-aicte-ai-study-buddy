@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Buddy</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>📚 Study Buddy</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/simple">Simple Terms</a>
+        <a href="/summary">Summary Notes</a>
+        <a href="/quiz">Generate Quiz</a>
+    </div>
+</nav>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+<div class="chatbot">
+    <h4>🤖 Chat</h4>
+    <input id="chatInput" placeholder="Ask doubt...">
+    <button onclick="sendChat()">Send</button>
+    <p id="chatResponse"></p>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

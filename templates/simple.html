@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="title">📘 Simple Terms</h2>
+
+{% if not ready %}
+<p class="empty">Upload content first.</p>
+{% else %}
+<div class="points-container">
+    {% for line in data.split('\n') %}
+        {% if line.strip() %}
+        <div class="point-card">
+            <span class="icon">💡</span>
+            <span>{{ line }}</span>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

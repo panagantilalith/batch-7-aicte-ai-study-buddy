@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="title">📝 Summary Notes</h2>
+
+{% if not ready %}
+<p class="empty">Upload content first.</p>
+{% else %}
+<div class="summary-container">
+    {% for line in data.split('\n') %}
+        {% if ':' in line %}
+            <h3 class="heading">🔹 {{ line }}</h3>
+        {% elif line.strip() %}
+            <p class="subpoint">{{ line }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

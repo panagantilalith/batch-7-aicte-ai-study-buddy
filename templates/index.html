@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="upload-wrapper">
+    <h1 class="upload-title">📚 Upload Study Material</h1>
+
+    {% if ready %}
+        <p class="success-msg">✅ Content Ready! Use tabs above</p>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data" class="upload-card">
+        <textarea name="text" placeholder="Paste your study text here..."></textarea>
+
+        <div class="file-row">
+            <input type="file" name="file">
+            <button type="submit">Generate</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
